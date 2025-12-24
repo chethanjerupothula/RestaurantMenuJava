@@ -1,25 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, button {
+            margin-top: 5px;
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
 
 <h2>Restaurant Menu</h2>
 
 <form action="Restaurant" method="post">
-    <label>Choose Item:</label>
-    <select name="choice">
+    <label for="choice">Choose Item:</label>
+    <select name="choice" id="choice" required>
+        <option value="">--Select an Item--</option>
         <option value="1">Pizza - ₹250</option>
         <option value="2">Burger - ₹150</option>
         <option value="3">Pasta - ₹200</option>
         <option value="4">Coffee - ₹100</option>
     </select>
-    <br><br>
 
-    <label>Quantity:</label>
-    <input type="number" name="quantity" required>
-    <br><br>
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" id="quantity" min="1" value="1" required>
 
     <button type="submit">Order</button>
 </form>
